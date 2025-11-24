@@ -78,11 +78,9 @@ def get_embeddings(texts: List[str]) -> List[List[float]]:
                 else:
                     embeddings.append(embedding)
             else:
-                # Fallback to zeros if something goes wrong
-                embeddings.append([0.0] * 384)  # all-MiniLM-L6-v2 has 384 dimensions
+                raise ValueError(f"Unexpected embedding response format: {embedding}")
         else:
-            print(f"Error getting embedding: {response.text}")
-            embeddings.append([0.0] * 384)
+            raise Exception(f"Error getting embedding (status {response.status_code}): {response.text}")
     
     return embeddings
 

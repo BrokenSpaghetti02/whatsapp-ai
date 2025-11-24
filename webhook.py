@@ -63,7 +63,10 @@ async def whatsapp_webhook(
         })
         
     except Exception as e:
-        ai_response = f"Sorry, I encountered an error: {str(e)}"
+        # Log the full error for debugging
+        print(f"Error processing message from {user_number}: {str(e)}")
+        # Return a generic error message to the user
+        ai_response = "Sorry, I encountered an error processing your message. Please try again later."
     
     # Create Twilio response
     response = MessagingResponse()

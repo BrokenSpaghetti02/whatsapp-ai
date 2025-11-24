@@ -20,7 +20,6 @@ An AI-powered WhatsApp chatbot that uses Retrieval-Augmented Generation (RAG) to
 - **Twilio**: WhatsApp API integration
 - **Hugging Face**: LLM and embeddings (API-based)
 - **ChromaDB**: Vector database for document storage
-- **LangChain**: RAG orchestration
 - **PyPDF**: PDF document processing
 
 ## 📋 Prerequisites
@@ -254,10 +253,10 @@ This project is open source and available under the MIT License.
 
 ## 🙏 Acknowledgments
 
-- Hugging Face for free LLM APIs
+- Hugging Face for free LLM and embedding APIs
 - Twilio for WhatsApp integration
 - ChromaDB for vector storage
-- LangChain for RAG framework
+- Streamlit for easy UI development
 
 ## 📞 Support
 

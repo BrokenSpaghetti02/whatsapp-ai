@@ -30,9 +30,16 @@ def start_webhook_server():
 def stop_webhook_server():
     """Stop the FastAPI webhook server"""
     if st.session_state.webhook_running and st.session_state.webhook_process:
-        os.kill(st.session_state.webhook_process.pid, signal.SIGTERM)
-        st.session_state.webhook_process = None
-        st.session_state.webhook_running = False
+        try:
+            os.kill(st.session_state.webhook_process.pid, signal.SIGTERM)
+        except ProcessLookupError:
+            # Process already terminated
+            pass
+        except Exception as e:
+            print(f"Error stopping webhook server: {e}")
+        finally:
+            st.session_state.webhook_process = None
+            st.session_state.webhook_running = False
 
 def configure_twilio_webhook(phone_number):
     """Configure Twilio to use the webhook URL"""
