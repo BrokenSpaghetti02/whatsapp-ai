@@ -1,0 +1,22 @@
+# Web Framework
+streamlit==1.29.0
+fastapi==0.104.1
+uvicorn==0.24.0
+python-multipart==0.0.6
+
+# WhatsApp Integration
+twilio==8.10.0
+
+# Vector Database
+chromadb==0.4.22
+
+# Document Processing
+pypdf==3.17.4
+python-dotenv==1.0.0
+reportlab==4.0.7
+
+# Hugging Face
+huggingface-hub==0.20.1
+
+# HTTP Requests
+requests==2.31.0
